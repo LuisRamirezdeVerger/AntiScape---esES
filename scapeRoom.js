@@ -4,6 +4,7 @@ const qstns = require("./qstns");
 const { Character } = require("./class");
 const items = require("./objects");
 // const tutorial = require("./rooms/tutorial");
+//ANDALUUUUU!!!
 
 let game;
 
@@ -35,6 +36,7 @@ const intro = () => {
     .then((answers) => {
       game = new Character(answers.charnombre);
       console.log(
+        //RECUERDA PONER EL INVENTARIO
         `- Extranio: De acuerdo ${game.nombre},
 Voy a sacarte de aqui. Por lo que he escuchado, no hay persona viva que haya logrado escapar, pero confio.
 simplemente ten cuidado con lo que piensas, hay algo vivo alli dentro. Seguramente sere capaz de ayudarte, sigue mis consejos!`
@@ -102,10 +104,10 @@ const room0 = () => {
       room0();
     } else if (answer.room00 === "mirar ventana") {
       console.log(
-        "No ves un car*jo! Visualizas vagamente la silueta de tu colega"
+        "No ves un car*jo! Visualizas vagamente la silueta de tu amiguito"
       );
       room0();
-    } else if (answer.room00 === "jump") {
+    } else if (answer.room00 === "saltar") {
       console.log("Has saltado! Que es un juego sin saltar, verdad?");
       room0();
     } else {
@@ -124,7 +126,7 @@ const room1 = () => {
         "-Extra;o: Arghhh! It's been a lot since I don't ayuda somebody, can't remember the code, but I remember it had 4 digits, mirar alrededor! You may be "
       );
       room1();
-    } else if (answer.room01 === "inventory") {
+    } else if (answer.room01 === "inventario") {
       console.table(inventory);
       room1();
     } else if (answer.room01 === "abrir puerta") {
@@ -133,58 +135,58 @@ const room1 = () => {
           {
             nombre: "advice",
             message:
-              "When you look at the puerta, you realized that the puerta is completely brand new and sealed, but you also see a numpad"
+              "Cuando miras la puerta, te das cuenta de que la puerta esta completamente nueva y sellada, ademas ves un panel de acceso con teclado numerico."
                 .red,
           },
           {
             type: "input",
             nombre: "code1",
-            message: `Welcome ${game.nombre}. Enter code:`,
+            message: `Bienvenido ${game.nombre}. Introduzca el codigo:`,
           },
         ])
         .then((respuesta) => {
           if (respuesta.code1 == 1001) {
-            console.log("Access granted, you may continue, for now...".red);
+            console.log("Acceso autorizado, puedes continuar... Por ahora...".red);
             room2();
           } else {
-            console.log("Error, try again");
+            console.log("Error, intentalo de nuevo");
             room1();
           }
         });
     } else if (answer.room01 === "mirar alrededor") {
       console.log(
-        "Everything is dusty... You can see all those creepy paintings, an old rusty bed, a broken wood table with some damn well looking food and a new TV that's surprisely working"
+        "Todo esta polvoriento... Estas en una habitacion mas amplia. Puedes observar varias pinturas siniestras boca abajo apoyadas en el suelo, una cama oxidada, una mesa rota con una bandeja donde hay comida con aspecto delicioso, una TV colgada en la pared que sorprendentemente esta funcionando y una puerta al fondo del habitaculo"
       );
       room1();
-    } else if (answer.room01 === "jump") {
-      console.log("You jumped! What's a game without jumping, right?");
+    } else if (answer.room01 === "saltar") {
+      console.log("Has saltado! Que es un juego sin saltar, verdad?");
       room1();
     } else if (answer.room01 === "eat food") {
       console.log(
-        "HOW YOU DARE TO TAKE MYYYYYY FOOD? I KNEW YOU WERE NOT WORTH IT!".magenta
+        "COMO TE ATREVES A COMERTE MIIIIIIII COMIDA? SABIA QUE NO MERECIAS LA PENA!".magenta
           .bold
       );
       console.log(
-        "After you heard the voice, you start feeling unwell, nine seconds later, feeling a massive headache. You hear a sound coming from the TV unfortunetely in the TV you see youself bleeding out..."
+        "Despues de escuchar la voz, empiezas a encontrarte mal, tras 9 segundos, sientes un dolor de cabeza insoportable. Escuchas un estruendo producido por la TV, para tu desgracia, en la TV te ves a ti mismo sangrando por cada poro de tu cuerpo..."
       );
-      console.log("You died...".black.bgRed);
-    } else if (answer.room01 === "look bed") {
+      console.log("Has muerto...".black.bgRed);
+    } else if (answer.room01 === "mirar cama") {
       console.log(
-        `You can hear a voice: What are you thinking about , ${game.nombre}? You are not in position to rest!`
-      );
-      room1();
-    } else if (answer.room01 === "look table") {
-      console.log(
-        "You can hear a voice: Trust me, Human, you don't even want to eat that food..."
+        `-Extr;o: En que estas pensando, ${game.nombre}? No es el momento de descansar!`
       );
       room1();
-    } else if (answer.room01 === "watch tv") {
+    } else if (answer.room01 === "mirar mesa") {
       console.log(
-        "On TV you can see the news: - The whole planet is ruined!! 1001 demons have arrived, they burnt 1001 lands to ashes, and they said they'll stay for 1001 years... PLEASE HELP!"
+        "Extra;o: Creeme, humano, ni pienses en comerte la comida..."
+      );
+      room1();
+    } else if (answer.room01 === "mirar tv") {
+      console.log(
+        "Cuando alzas la mirada a la tv, esta se enciende sola. Parece que estan las noticias..:*Bzz* ...odo el planeta esta en ruin...*bzz*!! *bzz* 1001 demonios han surgido del nucleo de la tie...*bzz*, han quemado 1001 edificios de La Resistencia y han proclamado que La Tierra sera cenizas en 1001 a... *bzzzz* ... FAVOR AYUDA!"
       );
       room1();
     } else {
-      console.log("You can think better! Check your spelling");
+      console.log("Comando invalido, checkea la palabra, busca un sinonimo o piensa diferente!");
       room1();
     }
   });
@@ -197,8 +199,6 @@ const room2 = () => {
   inquirer.prompt(qstns.room02).then((answer) => {
     if (answer.room02 === "abrir puerta") {
       if (inventory.includes(items.iceGun)) {
-        // Poss err w/ inventory
-        console.log("Insert here ALL info");
         console.log(items.iceGun);
         room2();
       } else {
@@ -236,8 +236,8 @@ const room2 = () => {
         "Yup, that's a huge ice cube. Looks like there's something inside..."
       );
       room2();
-    } else if (answer.room01 === "jump") {
-      console.log("You jumped! What's a game without jumping, right?");
+    } else if (answer.room01 === "saltar") {
+      console.log("You saltared! What's a game without saltaring, right?");
       room2();
     } else if (answer.room02 === "shoot ice gun") {
       console.log(
@@ -288,11 +288,11 @@ const room3 = () => {
         );
         console.log("After inhaling the toxic air, you faint...")
       } 
-    } else if (answer.room03 === "jump") {
+    } else if (answer.room03 === "saltar") {
       lights = true;
       // Think on moving the whole room to another file just to have everything tidy...
-      console.log("You jumped! What's a game without jumping, right?");
-      console.log("After you jumped, the pressure plate was activated, and slowly, all lights started to switch on");
+      console.log("You saltared! What's a game without saltaring, right?");
+      console.log("After you saltared, the pressure plate was activated, and slowly, all lights started to switch on");
       room3();
     } else if (answer.room03 === "inventory") {
       console.table(inventory);
