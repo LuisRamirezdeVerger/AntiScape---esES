@@ -13,12 +13,16 @@ let lights = false;
 
 const init = () => {
   console.log(
+    //*La nuera que llama a la suegra* 
+    //-Nuera: Suegra! Tu desía' que ca' vé que mi hijo se cagara ensima tenía que limpiarlo, porque soy su madre, ¿verdá? 
+    //-Suegra: Sí, aro, pa' eso semo' la madre
+    //Nuera: Po' vente corriendo que tu hijo s'a pega'o la cogorsa de su vida y me tiene el baño comiito mierda
 `Bienvenidos a "AntiScape"! Este juego es una aventura grafica, para una experiencia mejorada, se recomienda leer TODO minuciosamente, posiblemente tengas la respuesta en el texto. 
  El reto del juego es encontra el comando programado, cuando cometas un fallo, revisa la palabra, lee el texto de nuevo o encuentra un sinonimo!`.red
   );
   console.log(`In the game you'll see text in different text colors, every color has a meaning, here you have all of them: `);
   console.log(`Cuando avanzas`.red);
-  console.log(`Cuando te habla tu amigo(Ahora lo entenderas))`.blue);
+  console.log(`Cuando te habla "er colega"(Ahora lo entenderas))`.blue);
   console.log(`Si necesitas realizar una accion`.green);
   console.log(`Texto general`.white.bold);
   console.log(`Esto es... Bueno, ya lo veras, si lo sabes todo, no disfrutas!! :P`.magenta);
@@ -37,7 +41,7 @@ const intro = () => {
       game = new Character(answers.charnombre);
       console.log(
         //RECUERDA PONER EL INVENTARIO
-        `- Extranio: De acuerdo ${game.nombre},
+        `- Extraño: De acuerdo ${game.nombre},
 Voy a sacarte de aqui. Por lo que he escuchado, no hay persona viva que haya logrado escapar, pero confio.
 simplemente ten cuidado con lo que piensas, hay algo vivo alli dentro. Seguramente sere capaz de ayudarte, sigue mis consejos!`
           .blue
@@ -59,13 +63,13 @@ const room0 = () => {
   inquirer.prompt(qstns.room00).then((answer) => {
     if (answer.room00 === "ayuda") {
       console.log(
-        "Escuchas una voz en tu cabeza... -Extranio: Hey! Puedes oirme? Te lo dije, te ayudare tanto como pueda! In order to escape from wherever you are, usa acciones (escribelas) que piensas que podrias hacer en ese momento. Escribe como si estuvieras buscando en Google (por ejemplo, si quieres abrir la puerta, el comando correcto seria <abrir puerta>. Intenta con <mirar alrededor>!"
+        "Escuchas una voz en tu cabeza... -Extraño: Hey! Puedes oirme? Te lo dije, te ayudare tanto como pueda! In order to escape from wherever you are, usa acciones (escribelas) que piensas que podrias hacer en ese momento. Escribe como si estuvieras buscando en Google (por ejemplo, si quieres abrir la puerta, el comando correcto seria <abrir puerta>. Intenta con <mirar alrededor>!"
       .blue);
       room0();
     } else if (answer.room00 === "usar llave") {
       if (inventory.includes("key") == true) {
         console.log(
-          "-Extranio: Bien hecho! Ahora deberias ser capaz de escapar de esta habitacion"
+          "-Extraño: Bien hecho! Ahora deberias ser capaz de escapar de esta habitacion"
             .red
         );
         inventory.splice("key");
@@ -77,7 +81,7 @@ const room0 = () => {
       }else if (answer.room00 === "abrir puerta") {
         if (inventory.includes("key") == true) {
           console.log(
-            "-Extra;o: Tienes una llave, usala!"
+            "-Extraño: Tienes una llave, usala!"
               .red
           );
           room0();
@@ -99,7 +103,7 @@ const room0 = () => {
       room0();
     } else if (answer.room00 === "mirar alrededor") {
       console.log(
-        "Miras alrededor y... bueno... No hay mucho que ver, estas en una peque;a habitacion cuadrada con 3 ventanas, una llave en el suelo y la puerta cerrada"
+        "Miras alrededor y... bueno... No hay mucho que ver, estas en una pequeña habitacion cuadrada con 3 ventanas, una llave en el suelo y la puerta cerrada"
       );
       room0();
     } else if (answer.room00 === "mirar ventana") {
@@ -123,7 +127,7 @@ const room1 = () => {
   inquirer.prompt(qstns.room01).then((answer) => {
     if (answer.room01 === "ayuda") {
       console.log(
-        "-Extra;o: Arghhh! It's been a lot since I don't ayuda somebody, can't remember the code, but I remember it had 4 digits, mirar alrededor! You may be "
+        "-Extraño: Arghhh! It's been a lot since I don't ayuda somebody, can't remember the code, but I remember it had 4 digits, mirar alrededor! You may be "
       );
       room1();
     } else if (answer.room01 === "inventario") {
@@ -172,12 +176,12 @@ const room1 = () => {
       console.log("Has muerto...".black.bgRed);
     } else if (answer.room01 === "mirar cama") {
       console.log(
-        `-Extr;o: En que estas pensando, ${game.nombre}? No es el momento de descansar!`
+        `-Extraño: En que estas pensando, ${game.nombre}? No es el momento de descansar!`
       );
       room1();
     } else if (answer.room01 === "mirar mesa") {
       console.log(
-        "Extra;o: Creeme, humano, ni pienses en comerte la comida..."
+        "Extraño: Creeme, humano, ni pienses en comerte la comida..."
       );
       room1();
     } else if (answer.room01 === "mirar tv") {
@@ -212,7 +216,7 @@ const room2 = () => {
       room2();
     } else if (answer.room02 === "ayuda") {
       console.log(
-        "-Extra;o: The puerta is on fire! Think how you could stop a fire from an old tek lab, you may be able to take few stuff, but don't say a word!"
+        "-Extraño: The puerta is on fire! Think how you could stop a fire from an old tek lab, you may be able to take few stuff, but don't say a word!"
       );
       room2();
     } else if (answer.room02 === "mirar alrededor") {
@@ -245,7 +249,7 @@ const room2 = () => {
       );
       inventory.slice(items.iceGun);
       console.log(
-        "-Extra;o: Woah! You... You made it! How's is this POSSIBLE?!?! *ehem...* Wel.. Well doneee! I knew you were able to do it!"
+        "-Extraño: Woah! You... You made it! How's is this POSSIBLE?!?! *ehem...* Wel.. Well doneee! I knew you were able to do it!"
       );
       room3();
     } else if (answer.room02 === "melt ice cube") {
@@ -279,7 +283,7 @@ const room3 = () => {
   inquirer.prompt(qstns.room03).then((answer) => {
     if (answer.room03 === "abrir puerta") {
       if (inventory.includes(items.antiToxicMask)) {
-        console.log("-Extra;o: WHAAAAAT? NOOOOOOOOOOOO! You were not suposed to pass!! I brainwashed you when you died for the same reason! Why would you think you're not able to remember anything?! This is not over yet (nombre), IS NOT OVEEEEEER!");
+        console.log("-Extraño: WHAAAAAT? NOOOOOOOOOOOO! You were not suposed to pass!! I brainwashed you when you died for the same reason! Why would you think you're not able to remember anything?! This is not over yet (nombre), IS NOT OVEEEEEER!");
         console.log("While your fake friend was yelling at you because of his failure, you started to feel better than never in your life... Or death?")
         gameOver();
       } else {
@@ -299,11 +303,11 @@ const room3 = () => {
       room3();
     } else if (answer.room03 === "ayuda") {
       if(lights == false){
-        console.log("-Extra;o: If you want to continue, you'll need some light... Wait, is that a pressure plate under your feet? Put some pressure!!")
+        console.log("-Extraño: If you want to continue, you'll need some light... Wait, is that a pressure plate under your feet? Put some pressure!!")
         room3();
       } else {
         console.log(
-        "-Extra;o: No no no, you don't need me... Well, okay, if you insist... I've seen that chamber, you'll need an AntiToxic mask, but at this rate, you may need to craft it"
+        "-Extraño: No no no, you don't need me... Well, okay, if you insist... I've seen that chamber, you'll need an AntiToxic mask, but at this rate, you may need to craft it"
       );
       room3();
     }
@@ -314,7 +318,7 @@ const room3 = () => {
         "Everything is dark, lights are off"
       );
       } else {
-        console.log("- Extra;o: Woah! This place is a mess! Looks like it's been years since someone clean up this room. ");
+        console.log("- Extraño: Woah! This place is a mess! Looks like it's been years since someone clean up this room. ");
         console.log(" You're in a wasted room, you can see dirty spots all over the floor, also, a bit more conserved, a desk with a computer and a green potion, a closet, a small library and the puerta inside of a chamber")
       }
      
@@ -329,7 +333,7 @@ const room3 = () => {
       console.log(
         "When you introduce your hand in the pocket, feels empty, but when you look at your hand, you realize that you're holding the softest piece of cotton you ever touch"
       );
-      console.log("-Extra;o: Ohh! I missed that feeling, the best Antitoxic cotton with a touch of heaven...");
+      console.log("-Extraño: Ohh! I missed that feeling, the best Antitoxic cotton with a touch of heaven...");
       inventory.push(items.cotton);
       room3();
     } else if (answer.room03 === "take mask") {
@@ -340,7 +344,7 @@ const room3 = () => {
       room3();
     } else if (answer.room03 === "look chamber") {
       console.log(
-        "-Extra;o: That chamber is full of a green air, not suspicious at all, problably... Nothing bad... *gulp*"
+        "-Extraño: That chamber is full of a green air, not suspicious at all, problably... Nothing bad... *gulp*"
       );
       room3();
     } else if (answer.room03 === "look library") {
@@ -352,13 +356,13 @@ const room3 = () => {
       console.log(
         "[...] Whatever you do, NEVER trust on green, there are many reason, for example, [...] "
       );
-      console.log("-Extra;o: Ahh... Such a good memories reading that book... All you need is GREEN! Right?");
+      console.log("-Extraño: Ahh... Such a good memories reading that book... All you need is GREEN! Right?");
       room3();
     } else if (answer.room03 === "read toxicity book") {
       console.log(
         "[...] After 27 tests, it's well known how cotton clean the toxicity of the green air thanks to [...] "
       );
-      console.log("-Extra;o: When did that book arrive there? It wasn't the last time I checked it...");
+      console.log("-Extraño: When did that book arrive there? It wasn't the last time I checked it...");
       room3();
     } else if (answer.room03 === "craft antitoxic mask") {
       if (inventory.includes(items.cotton) && inventory.includes(items.toxicMask)) {
@@ -368,7 +372,7 @@ const room3 = () => {
           "Thanks to your knowledge, you are able to craft an... AntiToxic Mask!"
         );
         console.log(
-          "-Extra;o: That was... Unexpected... Go.. Good J.. Job... I guess..."
+          "-Extraño: That was... Unexpected... Go.. Good J.. Job... I guess..."
         );
 
       } else {
@@ -381,11 +385,11 @@ const room3 = () => {
       console.log(
         "The desk is pretty dirty and rusty, the computer seems to work, and the potion is inside of a cilindric phial, shinning with the best green you could imagine."
       );
-      console.log("-Extra;o: When did that book arrive there? It wasn't the last time I checked it...");
+      console.log("-Extraño: When did that book arrive there? It wasn't the last time I checked it...");
       room3();
     } else if (answer.room03 === "drink potion") {
       console.log(
-        "-Extra;o: Hahaha... Haha... HAHAHAHAHA!!"
+        "-Extraño: Hahaha... Haha... HAHAHAHAHA!!"
       );
       console.log("You foot start to weight way to much, you can't move at all... Every milisecond you feel how your blood start to get thicker, after 1.8 seconds, you became a statue...");
       console.log("You may need some knowledge for the next time...");
