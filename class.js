@@ -1,9 +1,10 @@
 class Character {
-  constructor(nombre, inventario) {
+  constructor(nombre, inventario, dinero) {
     this.nombre = nombre;
     this.inventario = inventario;
+    this.dinero = dinero;
   }
-  power = 5;
+  
 }
 
 module.exports = {

@@ -9,6 +9,7 @@ const items = require("./objects");
 let game;
 
 const inventory = [];
+const money = 0;
 let lights = false;
 
 const init = () => {
@@ -17,17 +18,22 @@ const init = () => {
     //-Nuera: Suegra! Tu desía' que ca' vé que mi hijo se cagara ensima tenía que limpiarlo, porque soy su madre, ¿verdá? 
     //-Suegra: Sí, aro, pa' eso semo' la madre
     //Nuera: Po' vente corriendo que tu hijo s'a pega'o la cogorsa de su vida y me tiene el baño comiito mierda
-`Bienvenidos a "AntiScape"! Este juego es una aventura grafica, para una experiencia mejorada, se recomienda leer TODO minuciosamente, posiblemente tengas la respuesta en el texto. 
+`Bienvenid@s a "EstáFlama"! Este juego es una aventura grafica, para una experiencia mejorada, se recomienda leer TODO minuciosamente, posiblemente tengas la respuesta en el texto. 
  El reto del juego es encontra el comando programado, cuando cometas un fallo, revisa la palabra, lee el texto de nuevo o encuentra un sinonimo!`.red
   );
-  console.log(`In the game you'll see text in different text colors, every color has a meaning, here you have all of them: `);
-  console.log(`Cuando avanzas`.red);
-  console.log(`Cuando te habla "er colega"(Ahora lo entenderas))`.blue);
-  console.log(`Si necesitas realizar una accion`.green);
-  console.log(`Texto general`.white.bold);
-  console.log(`Esto es... Bueno, ya lo veras, si lo sabes todo, no disfrutas!! :P`.magenta);
-  console.log(`Este juego no cuenta con "guardado", por lo tanto, si no puedes completarlo de una vez, necesitaras empezar de nuevo!(Aunque podras hacer "SpeedRun")
-  Ahora ya sabes todo lo que necesitas, recuerda leer con atencion y disfrutar!!`.black.bgWhite);
+  console.log(`En el juego verás letras de diferentes colores, cada color tiene su significado: `);
+  console.log(`Cuando avanzas.`.red);
+  console.log(`Cuando te habla "er colega"(Ahora lo entenderás))`.blue);// Se quita?
+  console.log(`Si necesitas realizar una acción.`.green);
+  console.log(`Texto general.`.white.bold);
+  console.log(`Esto es... Bueno, ya lo verás, si lo sabes todo, no disfrutas!! :P`.magenta);
+  console.log(`Este juego no cuenta con "guardado", por lo tanto, si no puedes completarlo de una vez, necesitarás empezar de nuevo!(Aunque podras hacer "SpeedRun")
+  Ahora ya sabes todo lo que necesitas, recuerda leer con atención y disfrutar!!`.black.bgWhite);
+  console.log("");
+  console.log("*Carraspea* Ahora que lo sabe' casi tó, podemo' hablá trankilito, tú sabe...");
+  console.log("Lo que tiene' que asé es sobreviví a un día en Sevilla, la cosa eh simple, yo te digo lo que asé, y tú lo tiene que asé, y sin rechistá ¿eh? Aquí se viene a sabé, y sino, te vuerve pa'r keli.");
+  console.log("Haremo' lo más basiquito, una vuerta por er centro, vihtasillo a la Torre del Oro, a la Giralda y nos vamos pa'l barrio con los shavale'.");
+  console.log("La putada es que se ma'lvidao la cartera y asín que lo vá pagá tú tó, menos má que tú trabaja... Pero vamo', que hay tengo unos cogollos, guiri que nos encontremos, se lo vendemo' por 20 pavo' y listo");
   console.log("");
 
   //change after "=>" to run game properly
@@ -39,19 +45,23 @@ const intro = () => {
     .prompt(qstns.prologe)
     .then((answers) => {
       game = new Character(answers.charnombre);
+      console.log("")
       console.log(
         //RECUERDA PONER EL INVENTARIO
-        `- Extraño: De acuerdo ${game.nombre},
-Voy a sacarte de aqui. Por lo que he escuchado, no hay persona viva que haya logrado escapar, pero confio.
-simplemente ten cuidado con lo que piensas, hay algo vivo alli dentro. Seguramente sere capaz de ayudarte, sigue mis consejos!`
+        `- "Er Wito": 'Cucha bro, mi ${game.nombre}:
+Te vi'a guiá por nuestra Sevilla y olé, er caso es que no tengo pasta y vamo' a asé de tó, prepárate, coge er dinero, lo' canuto' y vamo a eshá er día, que mañana no' vamo' pa Coní.
+!`
           .blue
       );
       console.log(
-        "Empecemos por lo basico. Si quieres escapar, tendras que pensar (escribir) tu siguiente movimiento. Esa es la parte 'facil', he escuchado que tendras diferentes pruebas en cada habitacion"
+        "Empesemo' po'lo básico. Si quiere' sobreviví, tendrá' que pensá' (escribir) tu siguiente movimiento. Esa e' la parte 'fásil', he escucha'o que van a subí las temperatura' y nos podremos achicharrá ar Só'."
           .blue
       );
       console.log(
-        `Si estas teniendo problemas para completar el reto, pide "ayuda"!`.blue
+        `Como te he disho ante', estoy seco como una mahoma, pero tengo unas bolsitas de weed que le podemo' vendé a lo' guiri'"!`.blue
+      );
+      console.log(
+        `Si esta' teniendo problemas para completar el reto, pide "ayuda"!`.blue
       );
     })
     .then(() => room0());

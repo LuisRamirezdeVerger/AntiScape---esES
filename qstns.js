@@ -5,7 +5,7 @@ const tutorial = [
     type: "text",
     nombre: "prologe",
     message:
-      "Everything went too fast, after a flash throught your eyes, you felt the freedom in your soul, but, suddenly a force grab you...",
+      "- De viaje de verano, te has comprado un viaje a Sevilla, tu guía, está esperándote en el aeropuerto.",
   },
 ];
 
@@ -13,7 +13,7 @@ const prologe = [
   {
     type: "input",
     nombre: "charnombre",
-    message: `You hear a knock from someone who seems to be outside  *knock* *knock* *knock* Hey dude, are you okay? What's your nombre? >>`,
+    message: `*silbido* FIUUU! Miarma! Por aquí, que se me ha olvidao' er cartelito pero yo soy tu guía. Yo soy er Wito, encanta'o. ¿Tú como te llama', corasón?`,
   },
 ];
 
