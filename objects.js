@@ -2,16 +2,16 @@
 //   inventory.slice(iceGun);
 // }
 
-let filter = {
+let agua = {
   id: 1,
-  nombre: "Filtro",
+  nombre: "Agua",
+  durabilidad: 3,
 };
 
-let fireGauntlet = {
-  id: 1,
-  nombre: "Guantelete Igneo",
-  // power: 10,
-  // durability: 1,
+let bolsita = {
+  id: 2,
+  nombre: "YerbaBuena",
+  durabilidad: 1,
 };
 
 let iceGun = {
@@ -35,4 +35,4 @@ let antiToxicMask = {
   id: 5,
   nombre: "Mascara AntiToxica"
 };
-module.exports = { filter, fireGauntlet, iceGun, toxicMask, cotton, antiToxicMask };
+module.exports = { agua, bolsita, iceGun, toxicMask, cotton, antiToxicMask };

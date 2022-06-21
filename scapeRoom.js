@@ -8,11 +8,17 @@ const items = require("./objects");
 
 let game;
 
-const inventory = [];
-const money = 0;
-let lights = false;
+const inventory = [items.agua];
+const dinero = 10;
+let sed = false;
+
+//Durabilidad del agua
+if (durabilidad.agua = 0){
+  inventory.splice(items.agua);
+}
 
 const init = () => {
+  dinero;
   console.log(
     //*La nuera que llama a la suegra* 
     //-Nuera: Suegra! Tu desía' que ca' vé que mi hijo se cagara ensima tenía que limpiarlo, porque soy su madre, ¿verdá? 
