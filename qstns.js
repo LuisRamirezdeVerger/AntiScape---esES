@@ -13,7 +13,7 @@ const prologe = [
   {
     type: "input",
     nombre: "charnombre",
-    message: `*silbido* FIUUU! Miarma! Por aquí, que se me ha olvidao' er cartelito pero yo soy tu guía. Yo soy er Wito, encanta'o. ¿Tú como te llama', corasón?`,
+    message: `*silbido* FIUUU! Miarma! Por aquí, que se me ha olvidao' er cartelito pero yo soy tu guía. Me dicen "er Wito", encanta'o. ¿Tú como te llama', corasón?`,
   },
 ];
 

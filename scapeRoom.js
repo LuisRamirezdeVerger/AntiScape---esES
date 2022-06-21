@@ -48,8 +48,8 @@ const intro = () => {
       console.log("")
       console.log(
         //RECUERDA PONER EL INVENTARIO
-        `- "Er Wito": 'Cucha bro, mi ${game.nombre}:
-Te vi'a guiá por nuestra Sevilla y olé, er caso es que no tengo pasta y vamo' a asé de tó, prepárate, coge er dinero, lo' canuto' y vamo a eshá er día, que mañana no' vamo' pa Coní.
+        `- "Er Wito": 'Cucha, mi ${game.nombre}:
+Te vi'a guiá por nuestra Sevilla y olé, er caso es que no tengo pasta y vamo' a asé de tó, prepárate, coge er dinero, loh canuto' y vamo a eshá er día, que mañana no' vamo' pa Coní.
 !`
           .blue
       );
@@ -58,11 +58,12 @@ Te vi'a guiá por nuestra Sevilla y olé, er caso es que no tengo pasta y vamo' 
           .blue
       );
       console.log(
-        `Como te he disho ante', estoy seco como una mahoma, pero tengo unas bolsitas de weed que le podemo' vendé a lo' guiri'"!`.blue
+        `Como te he disho ante', estoy seco como una mahoma, pero tengo unas bolsitas de weed que le podemo' vendé a loh guiri'"!`.blue
       );
       console.log(
-        `Si esta' teniendo problemas para completar el reto, pide "ayuda"!`.blue
+        `Venga, vamoh ar carro, y empesamoh, pero ante', noh pasamo' por la gasolinera, que está farto de cardo. Tú me pué asé'r favó de deharme 10 eurillo?`.blue
       );
+      
     })
     .then(() => room0());
 };
